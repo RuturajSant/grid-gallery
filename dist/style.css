@@ -1,0 +1,104 @@
+*{
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+}
+body{
+  height:auto;
+  background-color:#53b096;
+}
+.parent {
+  display: grid;
+  height:500px;
+  width:500px;
+  margin:auto;
+  margin-top:1%;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+img{
+  width:100%;
+  height:100%;
+  border-radius:5px;
+  object-fit:cover;
+}
+.big{
+  width:100%;
+  height:100%;
+  border-radius:8px;
+  box-shadow: 6px 6px 10px 0px rgba(0,0,0,0.65);
+-webkit-box-shadow: 6px 6px 10px 0px rgba(0,0,0,0.65);
+-moz-box-shadow: 6px 6px 10px 0px rgba(0,0,0,0.65);
+}
+.small{
+  max-height:90px;
+  max-width:90px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.big { grid-area: 2 / 2 / 6 / 7; }
+.one { grid-area: 5 / 1 / 6 / 2; }
+.two { grid-area: 4 / 1 / 5 / 2; }
+.three { grid-area: 3 / 1 / 4 / 2; }
+.four { grid-area: 2 / 1 / 3 / 2; }
+.five { grid-area: 1 / 1 / 2 / 2; }
+.six { grid-area: 1 / 2 / 2 / 3; }
+.seven { grid-area: 1 / 3 / 2 / 4; }
+.eight { grid-area: 1 / 4 / 2 / 5; }
+.nine { grid-area: 1 / 5 / 2 / 6; }
+.ten { grid-area: 1 / 6 / 2 / 7; }
+
+
+@media (max-width:450px){
+  
+  .parent{
+    all:unset;
+    position:relative;
+    height:430px;
+    max-width:320px;
+    display:flex;
+    margin:auto;
+    margin-top:12%;
+    overflow-x:auto;
+    overflow-y:hidden;
+  }
+  
+  .parent .small{
+  position:relative;
+  bottom:-100%;
+  transform:translateY(-100%);
+  min-width:100px;
+  height:100px;
+  line-height:110px;
+  text-align:center;
+  background-color:#ddd;
+  margin-right:4px;
+}
+.parent::-webkit-scrollbar {
+  height: 0;
+}
+.parent::-webkit-scrollbar-track {
+  background: #53b096; 
+}
+/* Handle */
+.parent::-webkit-scrollbar-thumb {
+  background: #02736d; 
+  opacity:0;
+  border-radius:5px;
+}
+/* Handle on hover */
+.parent::-webkit-scrollbar-thumb:hover {
+  background: #015c57; 
+}
+  .parent .big{
+  position:fixed;
+  text-align:center;
+  width:320px;
+  height:320px;
+  line-height:320px;
+  background-color:#666;
+}
+}
